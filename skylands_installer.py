@@ -53,7 +53,8 @@ SKYLANDS WFA LAUNCHER
 
 1. Launch Skylands
 2. Uninstall Skylands
-3. Exit Launcher
+3. Update Launcher
+4. Exit Launcher
 """
 
 print(menu_text)
@@ -73,6 +74,17 @@ while True:
       os.remove('version.txt')
       print('Skylands Uninstalled.')
     elif opt == 3:
+      print("Updating Launcher...")
+      link = "https://raw.githubusercontent.com/HMI-Studios/Skylands-WFA/master/skylands_installer.py"
+      f = urllib.request.urlopen(link)
+      new_launcher = f.read()
+      f.close()
+
+      f = open("skylands_installer.py", "wb")
+      f.write(new_launcher)
+      f.close()
+      exit('Update complete. Please restart launcher.')
+    elif opt == 4:
       break
     else:
       print('Unknown menu option.')
