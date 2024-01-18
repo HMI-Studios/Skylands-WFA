@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var speed = 360
-@export var max_speed = 620
-@export var gravity = 5000
-@export var jump_height = -1600
+@export var speed = 60
+@export var max_speed = 120
+@export var jump_height = -266
+
 var screen_size # Size of the game window.
 var animation_player : AnimationPlayer
 
@@ -16,7 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-    velocity.y += gravity * delta
+    velocity += Global.gravity * delta
     horizontal_movement()
     move_and_slide()
     

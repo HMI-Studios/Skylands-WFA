@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqpasac6nkwwr"]
+
+[ext_resource type="Script" path="res://scripts/levels/Elevator.gd" id="1_7yy0m"]
+
+[sub_resource type="Gradient" id="Gradient_2hcjh"]
+colors = PackedColorArray(0, 0.839216, 1, 0.498039, 1, 1, 1, 0.498039)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mg0ug"]
+gradient = SubResource("Gradient_2hcjh")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lndo"]
+size = Vector2(64, 64)
+
+[node name="Elevator" type="Area2D"]
+gravity_space_override = 1
+gravity = -1360.57
+script = ExtResource("1_7yy0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_mg0ug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8lndo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

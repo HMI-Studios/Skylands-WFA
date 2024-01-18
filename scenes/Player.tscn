@@ -4,16 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://c1qc8yhb5ng87" path="res://scenes/CharacterRig.tscn" id="2_q3yxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ytk7r"]
-size = Vector2(98.7499, 265)
+size = Vector2(74, 265)
 
-[node name="Player" type="CharacterBody2D"]
-texture_filter = 1
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_yiqff")
 
 [node name="CharacterRig" parent="." instance=ExtResource("2_q3yxq")]
 position = Vector2(-5.00012, 19.0002)
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2(-0.500002, -1.5)
-scale = Vector2(0.800001, 1)
+position = Vector2(9.53674e-07, -1.5)
 shape = SubResource("RectangleShape2D_ytk7r")

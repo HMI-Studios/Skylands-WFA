@@ -633,7 +633,6 @@ offset = Vector2(2.19998, 17.2)
 [node name="Near Hand" type="Sprite2D" parent="."]
 position = Vector2(-38, -11)
 rotation = -0.155555
-scale = Vector2(1, 1)
 texture = ExtResource("10_5hned")
 offset = Vector2(2.61874, 28.9489)
 
