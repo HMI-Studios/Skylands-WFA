@@ -15,7 +15,7 @@ func _process(delta):
 func set_level(path):
     var scene = load("res://scenes/levels/%s.tscn" % path)
     level = scene.instantiate()
-    add_child(level)
+    %Level.add_child(level)
     
     
 func get_spawn_pos():

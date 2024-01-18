@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyxdmsj8oe7f"]
+
+[ext_resource type="Texture2D" uid="uid://d1x4fs547l7yo" path="res://assets/items/GDFSER-bullet.png" id="1_bw0sw"]
+[ext_resource type="Script" path="res://scripts/items/GDFSERBullet.gd" id="1_xse1l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7pac0"]
+radius = 5.0
+
+[node name="GDFSERBullet" type="RigidBody2D"]
+continuous_cd = 1
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_xse1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_7pac0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+rotation = -1.5708
+texture = ExtResource("1_bw0sw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

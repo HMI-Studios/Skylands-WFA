@@ -16,9 +16,10 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-#    body.velocity += -Global.gravity
-    bodies[body] = true
+    if is_instance_of(body, CharacterBody2D):
+        bodies[body] = true
 
 
 func _on_body_exited(body):
-    bodies.erase(body)
+    if is_instance_of(body, CharacterBody2D):
+        bodies.erase(body)

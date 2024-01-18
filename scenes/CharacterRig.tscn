@@ -568,6 +568,9 @@ position = Vector2(32, -12)
 texture = ExtResource("2_yb86i")
 offset = Vector2(7.35767, 25.636)
 
+[node name="FarGunSlot" type="Node2D" parent="Far Hand"]
+position = Vector2(10, 43)
+
 [node name="Hips" type="Sprite2D" parent="."]
 texture = ExtResource("3_00q0m")
 
@@ -635,6 +638,9 @@ position = Vector2(-38, -11)
 rotation = -0.158535
 texture = ExtResource("10_5hned")
 offset = Vector2(2.61874, 28.9489)
+
+[node name="NearGunSlot" type="Node2D" parent="Near Hand"]
+position = Vector2(2, 47)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
