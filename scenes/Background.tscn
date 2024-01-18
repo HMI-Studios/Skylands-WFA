@@ -1,4 +1,19 @@
-[gd_scene format=3 uid="uid://cmkiloy8depds"]
+[gd_scene load_steps=3 format=3 uid="uid://cmkiloy8depds"]
+
+[sub_resource type="Gradient" id="Gradient_u5lqi"]
+colors = PackedColorArray(0.8, 0.847059, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k11sm"]
+gradient = SubResource("Gradient_u5lqi")
+fill_to = Vector2(0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
-layer = -1
+layer = -2
+
+[node name="Sky" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_k11sm")

@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 
 signal fade_complete()
@@ -20,6 +20,7 @@ func fade(speed, next_scene):
 
 
 func fade_out(speed):
+    print(speed)
     %Fade.show()
     %AnimationPlayer.set_speed_scale(speed)
     %AnimationPlayer.play("fade")
@@ -33,3 +34,4 @@ func fade_in(speed):
     %AnimationPlayer.play_backwards("fade")
     await %AnimationPlayer.animation_finished
     fade_complete.emit()
+    %Fade.hide()

@@ -9,7 +9,7 @@ var is_fading = false
 
 func _ready():
     if Global.play_music:
-        %Music.play()
+        MenuMusic.play()
 
 
 func _process(delta):
@@ -20,7 +20,7 @@ func _process(delta):
 
 func _on_music_finished():
     if Global.play_music:
-        %Music.play()
+        MenuMusic.play()
 
 
 func _input(event):

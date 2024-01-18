@@ -38,20 +38,13 @@ _data = {
 "fade": SubResource("Animation_qk3g0")
 }
 
-[node name="Transition" type="Control"]
-z_index = 5
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_2u4rc")
 
 [node name="Fade" type="ColorRect" parent="."]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

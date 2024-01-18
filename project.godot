@@ -21,6 +21,7 @@ config/icon="res://assets/icon.png"
 Global="*res://scripts/Global.gd"
 Background="*res://scenes/Background.tscn"
 Transition="*res://scenes/Transition.tscn"
+MenuMusic="*res://scenes/MenuMusic.tscn"
 
 [display]
 
@@ -28,6 +29,7 @@ window/size/viewport_width=960
 window/size/viewport_height=720
 mouse_cursor/custom_image="res://assets/cursor.png"
 mouse_cursor/custom_image_hotspot=Vector2(16, 16)
+mouse_cursor/size/viewport_height=720
 
 [input]
 
