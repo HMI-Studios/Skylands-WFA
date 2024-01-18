@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgvv8hfyoj12e"]
+
+[ext_resource type="Texture2D" uid="uid://pmjenegwktut" path="res://assets/intro.png" id="1_5adhq"]
+[ext_resource type="Script" path="res://scripts/Intro.gd" id="1_5kmsm"]
+[ext_resource type="AudioStream" uid="uid://c5na3887so0x8" path="res://assets/music/Skylands Theme Start.ogg" id="2_ekyc2"]
+[ext_resource type="Script" path="res://scripts/ContainBackground.gd" id="2_iucl2"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5kmsm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.576471, 0.576471, 0.713726, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5adhq")
+centered = false
+script = ExtResource("2_iucl2")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_ekyc2")
+
+[connection signal="finished" from="Music" to="." method="_on_finished"]

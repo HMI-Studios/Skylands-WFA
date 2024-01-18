@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dqtwflchjga2e"
+path="res://.godot/imported/Substantial Situation.ogg-06a902b440d873a41570df79174e4884.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Substantial Situation.ogg"
+dest_files=["res://.godot/imported/Substantial Situation.ogg-06a902b440d873a41570df79174e4884.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
