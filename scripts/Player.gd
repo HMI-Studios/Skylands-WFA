@@ -13,6 +13,7 @@ func _ready():
     # var character_rig_scene = load("res://CharacterRig.tscn")
     animation_player = get_node("CharacterRig/AnimationPlayer")
     # animation_player.connect("animation_finished", self._on_animation_finished)
+    position = %Level.get_spawn_pos()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

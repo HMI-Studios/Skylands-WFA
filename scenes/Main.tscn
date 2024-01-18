@@ -2,19 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://br3ubfu76qbp6" path="res://scenes/Player.tscn" id="1_qk22d"]
 [ext_resource type="PackedScene" uid="uid://cphh6jruovbte" path="res://scenes/Level.tscn" id="2_2xpui"]
-[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_ja1tw"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_3x1oi"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Level" parent="." instance=ExtResource("2_2xpui")]
-scale = Vector2(0.25, 0.25)
+unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("1_qk22d")]
 unique_name_in_owner = true
-position = Vector2(570, -74)
 scale = Vector2(0.166, 0.166)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-150, 10)
+[node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
-script = ExtResource("3_ja1tw")
+script = ExtResource("3_3x1oi")
