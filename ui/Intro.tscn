@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgvv8hfyoj12e"]
 
-[ext_resource type="Texture2D" uid="uid://pmjenegwktut" path="res://assets/intro.png" id="1_5adhq"]
-[ext_resource type="Script" path="res://scripts/Intro.gd" id="1_5kmsm"]
-[ext_resource type="AudioStream" uid="uid://c5na3887so0x8" path="res://assets/music/Skylands Theme Start.ogg" id="2_ekyc2"]
-[ext_resource type="Script" path="res://scripts/ContainBackground.gd" id="2_iucl2"]
+[ext_resource type="Script" path="res://scripts/Intro.gd" id="1_xs0yq"]
+[ext_resource type="Texture2D" uid="uid://pmjenegwktut" path="res://assets/intro.png" id="2_6h0tf"]
+[ext_resource type="Script" path="res://scripts/ContainBackground.gd" id="3_0pkqp"]
+[ext_resource type="AudioStream" uid="uid://c5na3887so0x8" path="res://assets/music/Skylands Theme Start.ogg" id="4_x5so1"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5kmsm")
+script = ExtResource("1_xs0yq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -24,12 +24,12 @@ grow_vertical = 2
 color = Color(0.576471, 0.576471, 0.713726, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5adhq")
+texture = ExtResource("2_6h0tf")
 centered = false
-script = ExtResource("2_iucl2")
+script = ExtResource("3_0pkqp")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("2_ekyc2")
+stream = ExtResource("4_x5so1")
 
 [connection signal="finished" from="Music" to="." method="_on_finished"]

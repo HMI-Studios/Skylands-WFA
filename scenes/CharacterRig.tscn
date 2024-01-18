@@ -609,7 +609,7 @@ remote_path = NodePath("../../../Near Arm")
 
 [node name="RemoteNearHand" type="RemoteTransform2D" parent="Hips/Torso/RemoteNearArm"]
 position = Vector2(-8.90686, 47.683)
-rotation = -0.115703
+rotation = -0.118682
 remote_path = NodePath("../../../../Near Hand")
 
 [node name="Near Leg" type="Sprite2D" parent="Hips"]
@@ -632,7 +632,7 @@ offset = Vector2(2.19998, 17.2)
 
 [node name="Near Hand" type="Sprite2D" parent="."]
 position = Vector2(-38, -11)
-rotation = -0.155555
+rotation = -0.158535
 texture = ExtResource("10_5hned")
 offset = Vector2(2.61874, 28.9489)
 

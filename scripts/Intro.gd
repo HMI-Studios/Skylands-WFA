@@ -1,7 +1,7 @@
 extends Control
 
 
-var main_menu = preload("res://scenes/MainMenu.tscn")
+var main_menu = preload("res://ui/MainMenu.tscn")
 
 
 func _ready():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbt7e850mfiuk"]
 
-[ext_resource type="Script" path="res://scripts/Transition.gd" id="1_2u4rc"]
+[ext_resource type="Script" path="res://scripts/Transition.gd" id="1_20meo"]
 
 [sub_resource type="Animation" id="Animation_6w68p"]
 length = 0.001
@@ -40,7 +40,7 @@ _data = {
 
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = 5
-script = ExtResource("1_2u4rc")
+script = ExtResource("1_20meo")
 
 [node name="Fade" type="ColorRect" parent="."]
 unique_name_in_owner = true

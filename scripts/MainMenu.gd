@@ -26,7 +26,7 @@ func _on_music_finished():
 func _input(event):
     if event.is_action_pressed("space") and not is_fading:
         is_fading = true
-        var play_menu = preload("res://scenes/PlayMenu.tscn")
+        var play_menu = preload("res://ui/PlayMenu.tscn")
         Transition.set_color(Color(0.9, 0.9, 0.9))
         Transition.fade(1, play_menu)
         await Transition.fade_complete
