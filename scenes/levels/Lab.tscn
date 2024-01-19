@@ -1,16 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxr3s7rh5dnn6"]
+[gd_scene load_steps=12 format=3 uid="uid://cxr3s7rh5dnn6"]
 
 [ext_resource type="Texture2D" uid="uid://cqdh4gdndi1t7" path="res://assets/levels/lab_back1.png" id="1_xsl3y"]
 [ext_resource type="Texture2D" uid="uid://depmkkn4rco1" path="res://assets/levels/lab_back2.png" id="2_2mkf4"]
 [ext_resource type="Texture2D" uid="uid://ctemt4g5lba41" path="res://assets/levels/lab_back3.png" id="3_m681l"]
 [ext_resource type="Texture2D" uid="uid://c8w552t7xqh3c" path="res://assets/levels/lab_back4.png" id="4_8jkxg"]
 [ext_resource type="Texture2D" uid="uid://c21pslgwo3tty" path="res://assets/levels/lab1.png" id="5_77l05"]
+[ext_resource type="PackedScene" uid="uid://c24tpnc7epxp0" path="res://scenes/entities/Shoaldier.tscn" id="5_l4usa"]
 [ext_resource type="Texture2D" uid="uid://dre3tolku310b" path="res://assets/levels/lab2.png" id="6_0wgqo"]
 [ext_resource type="Texture2D" uid="uid://bar1o78xra808" path="res://assets/levels/lab3.png" id="7_qc4cd"]
 [ext_resource type="Texture2D" uid="uid://bd3idlxc677it" path="res://assets/levels/lab4.png" id="8_3uodo"]
 [ext_resource type="PackedScene" uid="uid://dqpasac6nkwwr" path="res://scenes/Elevator.tscn" id="9_bunpb"]
 
-[node name="Lab" type="Node2D"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_18q8b"]
+polygon = PackedVector2Array(-200, 232, -200, 64, 12, 64, 12, 228, 168, 232, 168, -76, 316, -76, 316, 308, -412, 304)
+
+[node name="Level" type="Node2D"]
 scale = Vector2(0.25, 0.25)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -50,27 +54,36 @@ position = Vector2(1875, -285)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_8jkxg")
 
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Shoaldier" parent="Entities" instance=ExtResource("5_l4usa")]
+position = Vector2(-112, -80)
+
 [node name="Overlays" type="Node2D" parent="."]
 z_index = 1
 
 [node name="lab1" type="Sprite2D" parent="Overlays"]
+light_mask = 2
 texture_filter = 1
 position = Vector2(0, -1567)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_77l05")
 
 [node name="lab2" type="Sprite2D" parent="Overlays"]
+light_mask = 2
 texture_filter = 1
 position = Vector2(1875, -1567)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("6_0wgqo")
 
 [node name="lab3" type="Sprite2D" parent="Overlays"]
+light_mask = 2
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("7_qc4cd")
 
 [node name="lab4" type="Sprite2D" parent="Overlays"]
+light_mask = 2
 texture_filter = 1
 position = Vector2(1875, 0)
 scale = Vector2(2.5, 2.5)
@@ -200,4 +213,7 @@ polygon = PackedVector2Array(-58.4, -950.8, -14.4, -985.6, 27.2001, -950.8)
 
 [node name="Spawn" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-602, 55)
+position = Vector2(-601, 77)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_18q8b")

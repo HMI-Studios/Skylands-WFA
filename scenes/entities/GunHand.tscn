@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxpkduxsvb76m"]
+
+[ext_resource type="Texture2D" uid="uid://kslreffgbj1h" path="res://assets/shoaldier/gun_hand.png" id="1_gujmf"]
+
+[node name="Gun Hand" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_gujmf")

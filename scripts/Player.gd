@@ -103,7 +103,9 @@ func horizontal_movement():
 #    else:
 #        stop_walk_animation()
 
-#func _input(event):
+
+func hurt(dmg):
+    print('ow: ', dmg)
     
     
 func play_walk_animation():
