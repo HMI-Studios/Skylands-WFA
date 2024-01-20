@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxpkduxsvb76m"]
 
-[ext_resource type="Texture2D" uid="uid://kslreffgbj1h" path="res://assets/shoaldier/gun_hand.png" id="1_gujmf"]
+[ext_resource type="Texture2D" uid="uid://xvc4rrt86t1n" path="res://assets/shoaldier/gun_hand.png" id="1_gujmf"]
 
 [node name="Gun Hand" type="Node2D"]
 

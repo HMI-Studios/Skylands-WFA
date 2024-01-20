@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceah6cmx3e2vk"]
 
-[ext_resource type="Texture2D" uid="uid://chtwpp12mhpkd" path="res://assets/items/GDFSER.png" id="1_tpi21"]
+[ext_resource type="Texture2D" uid="uid://cuk7gxpd31pl1" path="res://assets/items/GDFSER.png" id="1_tpi21"]
 [ext_resource type="Script" path="res://scripts/items/GDFSER.gd" id="2_w4x84"]
 
 [node name="Gun" type="Sprite2D"]

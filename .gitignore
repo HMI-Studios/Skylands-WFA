@@ -1,6 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 
-builds/
-assets/*.import
+/builds/
+!/builds/web/
+*.import
 

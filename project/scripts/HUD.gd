@@ -14,7 +14,6 @@ func _ready():
 
 
 func _process(delta):
-    return
     %HealthBar.value = player.HP
 
 

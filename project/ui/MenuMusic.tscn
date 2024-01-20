@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d24nkttav2lq1"]
 
-[ext_resource type="AudioStream" uid="uid://cxh7orqjx3g3r" path="res://assets/music/Skylands Theme Loop.ogg" id="1_l8jjg"]
+[ext_resource type="AudioStream" uid="uid://besti4sjesun7" path="res://assets/music/Skylands Theme Loop.ogg" id="1_l8jjg"]
 [ext_resource type="Script" path="res://scripts/MenuMusic.gd" id="2_6j7cy"]
 
 [sub_resource type="Animation" id="Animation_175aj"]
