@@ -109,8 +109,8 @@ func horizontal_movement():
 func hurt(dmg):
     HP -= dmg
     if HP <= 0:
-        pass
-        # die
+        position = %World.get_spawn_pos()
+        HP = 20
     
     
 func play_walk_animation():

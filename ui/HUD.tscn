@@ -1,10 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv4b12e155ua3"]
+[gd_scene load_steps=17 format=3 uid="uid://cv4b12e155ua3"]
 
 [ext_resource type="Texture2D" uid="uid://71g22hmi21lv" path="res://assets/hud/healthbar_frame.png" id="1_3fvn3"]
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_v7hy8"]
 [ext_resource type="Texture2D" uid="uid://cjedb3q4dkf1x" path="res://assets/hud/healthbar_back.png" id="2_5bk65"]
 [ext_resource type="Texture2D" uid="uid://e3ugi128jwh0" path="res://assets/hud/pause_btn.png" id="2_iaojn"]
 [ext_resource type="Texture2D" uid="uid://jtrpn7igelxt" path="res://assets/hud/health.png" id="3_vrgp0"]
+[ext_resource type="Texture2D" uid="uid://pclgyb07we72" path="res://assets/hud/gem/gem1.png" id="6_ej8jm"]
+[ext_resource type="Texture2D" uid="uid://hdngcmisbt44" path="res://assets/hud/gem/gem2.png" id="7_1tl2o"]
+[ext_resource type="Texture2D" uid="uid://ckq0m68arm4fk" path="res://assets/hud/gem/gem3.png" id="8_mdamj"]
+[ext_resource type="Texture2D" uid="uid://cy084psgxcsis" path="res://assets/hud/gem/gem4.png" id="9_n6bye"]
+[ext_resource type="Texture2D" uid="uid://c568fey2in2gn" path="res://assets/hud/gem/gem5.png" id="10_07byk"]
+[ext_resource type="Texture2D" uid="uid://cfv6w5vsbamda" path="res://assets/hud/gem/gem6.png" id="11_am406"]
+[ext_resource type="Texture2D" uid="uid://licjqoso4wtm" path="res://assets/hud/gem/gem7.png" id="12_1kl8r"]
+[ext_resource type="Texture2D" uid="uid://blau7suu8udhr" path="res://assets/hud/gem/gem8.png" id="13_ijvlt"]
+[ext_resource type="Texture2D" uid="uid://do7t3m0lew6cl" path="res://assets/hud/gem/gem9.png" id="14_vhupo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kav78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ej8jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1tl2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mdamj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n6bye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_07byk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_am406")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1kl8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ijvlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vhupo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivvvh"]
+font_color = Color(0.423529, 0.847059, 0, 1)
+shadow_color = Color(0, 0, 0, 0.505882)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_v7hy8")
@@ -55,3 +103,23 @@ offset_top = -67.0
 offset_right = 42.0
 grow_vertical = 0
 texture = ExtResource("2_iaojn")
+
+[node name="Control3" type="Control" parent="Container"]
+layout_mode = 1
+grow_horizontal = 0
+
+[node name="Gem" type="AnimatedSprite2D" parent="Container/Control3"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_kav78")
+centered = false
+offset = Vector2(10, 10)
+
+[node name="GemLabel" type="Label" parent="Container/Control3"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 44.0
+offset_top = 18.0
+offset_right = 84.0
+offset_bottom = 44.0
+text = "x2"
+label_settings = SubResource("LabelSettings_ivvvh")

@@ -10,9 +10,11 @@ func _ready():
     container = get_child(0)
     get_viewport().connect("size_changed", self._on_viewport_size_changed)
     _resize_background()
+    %Gem.play()
 
 
 func _process(delta):
+    return
     %HealthBar.value = player.HP
 
 
@@ -26,8 +28,8 @@ func _resize_background():
     var s
     if ratio > 2:
         s = scale_y * 2
-    elif ratio < 0.5:
-        s = scale_x / 0.5
+    elif ratio < 0.75:
+        s = scale_x / 0.75
     else:
         s = max(scale_x, scale_y)
     for child in container.get_children():
