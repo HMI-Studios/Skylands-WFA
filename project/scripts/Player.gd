@@ -111,6 +111,7 @@ func hurt(dmg):
     if HP <= 0:
         position = %World.get_spawn_pos()
         HP = 20
+        %World.reset()
     
     
 func play_walk_animation():

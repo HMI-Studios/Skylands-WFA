@@ -607,7 +607,7 @@ _data = {
 size = Vector2(26.3333, 70.3333)
 
 [node name="Shoaldier" type="CharacterBody2D"]
-scale = Vector2(3, 3)
+scale = Vector2(3.6, 3.6)
 script = ExtResource("1_5wlpc")
 
 [node name="Rig" type="Node2D" parent="."]

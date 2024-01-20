@@ -5,7 +5,11 @@ var level
 
 
 func _ready():
-    set_level("Lab")
+    reset()
+    
+    
+func reset():
+    set_level("TileTest")
 
 
 func _process(delta):
@@ -13,6 +17,9 @@ func _process(delta):
     
     
 func set_level(path):
+    for child in get_children():
+        remove_child(child)
+        child.queue_free()
     var scene = load("res://scenes/levels/%s.tscn" % path)
     level = scene.instantiate()
     add_child(level)
