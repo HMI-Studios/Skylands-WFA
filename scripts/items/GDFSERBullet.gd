@@ -29,7 +29,6 @@ func remove():
 
 
 func _on_body_entered(body):
-    print(body)
     if hitboxes.is_ancestor_of(body):
         remove()
     elif entities.is_ancestor_of(body):

@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var max_speed = 120
 @export var jump_height = -266
 
+@export var HP = 20
+
 var screen_size # Size of the game window.
 var animation_player : AnimationPlayer
 
@@ -105,7 +107,10 @@ func horizontal_movement():
 
 
 func hurt(dmg):
-    print('ow: ', dmg)
+    HP -= dmg
+    if HP <= 0:
+        pass
+        # die
     
     
 func play_walk_animation():

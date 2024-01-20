@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7ltgoh1gwm8k"]
+[gd_scene load_steps=5 format=3 uid="uid://c7ltgoh1gwm8k"]
 
 [ext_resource type="PackedScene" uid="uid://br3ubfu76qbp6" path="res://scenes/Player.tscn" id="1_qk22d"]
 [ext_resource type="PackedScene" uid="uid://cphh6jruovbte" path="res://scenes/World.tscn" id="1_x26t4"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_3x1oi"]
+[ext_resource type="PackedScene" uid="uid://cv4b12e155ua3" path="res://ui/HUD.tscn" id="4_x3ds7"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,3 +17,5 @@ scale = Vector2(0.166, 0.166)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 script = ExtResource("3_3x1oi")
+
+[node name="HUD" parent="." instance=ExtResource("4_x3ds7")]

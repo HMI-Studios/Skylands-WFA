@@ -62,9 +62,9 @@ func _physics_process(delta):
     
 func shoot(vec):
     if cooldown == 0:
-        cooldown = 0.5
+        cooldown = 0.75
         var bullet = Bullet.instantiate()
-        bullet.apply_impulse(vec * 900)
+        bullet.apply_impulse(vec * 750)
         bullet.modulate = Color(2, 0.5, 0)
         bullet.position = gun_hand.global_position + (vec*30)
         bullet.rotation = gun_hand.global_rotation
