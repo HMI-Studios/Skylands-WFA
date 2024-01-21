@@ -20,6 +20,7 @@ scale = Vector2(0.166, 0.166)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 position = Vector2(0, -80)
+range_layer_min = -2
 shadow_enabled = true
 texture = ExtResource("3_m6srh")
 texture_scale = 20.0

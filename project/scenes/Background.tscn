@@ -10,6 +10,9 @@ fill_to = Vector2(0, 1)
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = -2
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
 [node name="Sky" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
