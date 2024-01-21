@@ -68,7 +68,7 @@ func shoot(vec):
         bullet.modulate = Color(2, 0.5, 0)
         bullet.position = gun_hand.global_position + (vec*30)
         bullet.rotation = gun_hand.global_rotation
-        get_node('/root/Main/World').add_cddhild(bullet)
+        get_node('/root/Main/World').add_child(bullet)
     
 
 func handle_gun():
