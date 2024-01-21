@@ -111,4 +111,4 @@ func handle_gun():
             far_hand_remote.remote_path = gun_hand.get_path()
             is_gun_in_right_hand = false
             
-    shoot(aim_vec)
+#    shoot(aim_vec)
