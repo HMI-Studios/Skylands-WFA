@@ -33,6 +33,7 @@ texture_scale = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
 script = ExtResource("3_3x1oi")
 
 [node name="HUD" parent="." instance=ExtResource("4_x3ds7")]
