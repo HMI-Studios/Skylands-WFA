@@ -23,6 +23,7 @@ var gun = preload("res://scenes/items/GDFSER.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    Background.get_node('Darkness').show()
     screen_size = get_viewport_rect().size
     # var character_rig_scene = load("res://CharacterRig.tscn")
     animation_player = get_node("CharacterRig/AnimationPlayer")
