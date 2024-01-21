@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlhxihxddfn66"]
+
+[ext_resource type="Script" path="res://scripts/objects/Door.gd" id="1_8ups1"]
+
+[sub_resource type="Gradient" id="Gradient_y6xcv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c3tyn"]
+gradient = SubResource("Gradient_y6xcv")
+width = 13
+height = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ji5qk"]
+size = Vector2(13, 48)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mrd7j"]
+polygon = PackedVector2Array(-6, -25, 7, -25, 7, 24, -6, 24)
+
+[node name="Door" type="AnimatableBody2D"]
+script = ExtResource("1_8ups1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+light_mask = 2
+position = Vector2(0, 1)
+scale = Vector2(1, 0.96)
+texture = SubResource("GradientTexture2D_c3tyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ji5qk")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, 1)
+occluder = SubResource("OccluderPolygon2D_mrd7j")

@@ -7,9 +7,8 @@ const JUMP_VELOCITY = -400.0
 var Bullet = preload("res://scenes/items/GDFSERBullet.tscn")
 var cooldown = 1
 
-@onready var player = get_node('/root/Main/Player')
-
 @onready var rig = get_node("Rig")
+@onready var animation_player = get_node("Rig/AnimationPlayer")
 var near_arm
 var near_hand
 var near_hand_remote
@@ -55,7 +54,13 @@ func _physics_process(delta):
 #    else:
 #        velocity.x = move_toward(velocity.x, 0, SPEED)
 
-    handle_gun()
+    if %LineOfSight.is_player_in_sight():
+        if animation_player.is_playing():
+            animation_player.stop()
+        handle_gun()
+    else:
+        if not animation_player.is_playing():
+            animation_player.play("Idle")
 
     super._physics_process(delta)
     

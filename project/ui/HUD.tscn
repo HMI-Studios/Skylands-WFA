@@ -67,6 +67,7 @@ grow_vertical = 2
 
 [node name="Control" type="Control" parent="Container"]
 layout_mode = 1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
@@ -90,9 +91,11 @@ texture_progress_offset = Vector2(4, 27)
 
 [node name="Control2" type="Control" parent="Container"]
 layout_mode = 1
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
+grow_vertical = 0
 
 [node name="PauseBtn" type="TextureRect" parent="Container/Control2"]
 layout_mode = 1
@@ -106,6 +109,7 @@ texture = ExtResource("2_iaojn")
 
 [node name="Control3" type="Control" parent="Container"]
 layout_mode = 1
+anchors_preset = 0
 grow_horizontal = 0
 
 [node name="Gem" type="AnimatedSprite2D" parent="Container/Control3"]

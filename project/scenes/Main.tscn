@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7ltgoh1gwm8k"]
+[gd_scene load_steps=6 format=3 uid="uid://c7ltgoh1gwm8k"]
 
 [ext_resource type="PackedScene" uid="uid://br3ubfu76qbp6" path="res://scenes/Player.tscn" id="1_qk22d"]
 [ext_resource type="PackedScene" uid="uid://cphh6jruovbte" path="res://scenes/World.tscn" id="1_x26t4"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_3x1oi"]
+[ext_resource type="Texture2D" uid="uid://cxcjmqv0160h1" path="res://assets/point_light.webp" id="3_m6srh"]
 [ext_resource type="PackedScene" uid="uid://cv4b12e155ua3" path="res://ui/HUD.tscn" id="4_x3ds7"]
 
 [node name="Main" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
 
 [node name="World" parent="." instance=ExtResource("1_x26t4")]
 unique_name_in_owner = true
@@ -13,6 +17,19 @@ unique_name_in_owner = true
 [node name="Player" parent="." instance=ExtResource("1_qk22d")]
 unique_name_in_owner = true
 scale = Vector2(0.166, 0.166)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+position = Vector2(0, -85)
+range_layer_min = -2
+shadow_enabled = true
+texture = ExtResource("3_m6srh")
+texture_scale = 20.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Player"]
+position = Vector2(0, -85)
+range_item_cull_mask = 2
+texture = ExtResource("3_m6srh")
+texture_scale = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)

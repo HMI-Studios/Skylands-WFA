@@ -10,8 +10,8 @@ size = Vector2(74, 265)
 script = ExtResource("1_yiqff")
 
 [node name="CharacterRig" parent="." instance=ExtResource("2_q3yxq")]
-position = Vector2(-5.00012, 19.0002)
+position = Vector2(-4.76837e-07, 2)
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2(9.53674e-07, -1.5)
+position = Vector2(5, -19)
 shape = SubResource("RectangleShape2D_ytk7r")

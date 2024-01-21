@@ -7,6 +7,7 @@
 radius = 5.0
 
 [node name="GDFSERBullet" type="RigidBody2D"]
+collision_layer = 2
 mass = 0.01
 continuous_cd = 1
 max_contacts_reported = 1

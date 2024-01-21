@@ -5,6 +5,7 @@ extends RigidBody2D
 
 
 @onready var world = get_node('/root/Main/World')
+@onready var level = get_node('/root/Main/World/Level')
 @onready var hitboxes = get_node('/root/Main/World/Level/Hitboxes')
 @onready var entities = get_node('/root/Main/World/Level/Entities')
 @onready var player = get_node('/root/Main/Player')
@@ -29,11 +30,12 @@ func remove():
 
 
 func _on_body_entered(body):
-    if hitboxes.is_ancestor_of(body):
-        remove()
+    if level == null:
+        return
+    if body == hitboxes:
+        pass
     elif entities.is_ancestor_of(body):
         body.hurt(dmg)
-        remove()
     elif body == player:
         player.hurt(dmg)
-        remove()
+    remove()

@@ -3,6 +3,6 @@
 
 !/builds/
 /builds/*
-!/builds/web/
+!/builds/web/index.html
 *.import
-
+*.tmp

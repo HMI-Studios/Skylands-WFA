@@ -8,6 +8,7 @@ var is_fading = false
 
 
 func _ready():
+    Background.get_node('Darkness').hide()
     if Global.play_music:
         MenuMusic.play()
 
