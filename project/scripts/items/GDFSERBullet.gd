@@ -33,10 +33,9 @@ func _on_body_entered(body):
     if level == null:
         return
     if body == hitboxes:
-        remove()
+        pass
     elif entities.is_ancestor_of(body):
         body.hurt(dmg)
-        remove()
     elif body == player:
         player.hurt(dmg)
-        remove()
+    remove()
