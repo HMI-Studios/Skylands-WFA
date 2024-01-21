@@ -5,4 +5,4 @@
 /builds/*
 !/builds/web/index.html
 *.import
-
+*.tmp
