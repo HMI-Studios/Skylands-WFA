@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c24tpnc7epxp0"]
+[gd_scene load_steps=20 format=3 uid="uid://c24tpnc7epxp0"]
 
 [ext_resource type="Script" path="res://scripts/entities/Shoaldier.gd" id="1_5wlpc"]
 [ext_resource type="Texture2D" uid="uid://bql5y3im6lfpd" path="res://assets/shoaldier/arm_far.png" id="1_g5phy"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c8vcjhs8bmajm" path="res://assets/shoaldier/arm_near.png" id="11_egsml"]
 [ext_resource type="Texture2D" uid="uid://diq1yxvybswfs" path="res://assets/shoaldier/hand_near.png" id="12_1n1wc"]
 [ext_resource type="PackedScene" uid="uid://cxpkduxsvb76m" path="res://scenes/entities/GunHand.tscn" id="14_phgqn"]
+[ext_resource type="PackedScene" uid="uid://cp08bd4o5mii6" path="res://scenes/entities/LineOfSight.tscn" id="15_gtcer"]
 
 [sub_resource type="Animation" id="Animation_xywbl"]
 resource_name = "Idle"
@@ -24,7 +25,7 @@ tracks/0/path = NodePath("Near Leg/Near Foot:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(8, 0)]
@@ -36,7 +37,7 @@ tracks/1/path = NodePath("Near Leg/Near Foot:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -48,7 +49,7 @@ tracks/2/path = NodePath("Far Leg:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3, 6.85714)]
@@ -60,7 +61,7 @@ tracks/3/path = NodePath("Far Leg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.5708]
@@ -72,7 +73,7 @@ tracks/4/path = NodePath("Far Leg/Far Foot:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(8, 0)]
@@ -84,7 +85,7 @@ tracks/5/path = NodePath("Far Leg/Far Foot:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -96,7 +97,7 @@ tracks/6/path = NodePath("Torso:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-1, 28.8571)]
@@ -108,7 +109,7 @@ tracks/7/path = NodePath("Torso:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -120,7 +121,7 @@ tracks/8/path = NodePath("Torso/Head:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(6, -47)]
@@ -132,7 +133,7 @@ tracks/9/path = NodePath("Torso/Head:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -144,7 +145,7 @@ tracks/10/path = NodePath("Torso/Head/Hat:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
@@ -156,7 +157,7 @@ tracks/11/path = NodePath("Torso/Head/Hat:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -168,7 +169,7 @@ tracks/12/path = NodePath("Torso/Head/Jaw:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 0)]
@@ -180,7 +181,7 @@ tracks/13/path = NodePath("Torso/Head/Jaw:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -192,7 +193,7 @@ tracks/14/path = NodePath("Torso/RemoteFarArm:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(14, -41)]
@@ -204,7 +205,7 @@ tracks/15/path = NodePath("Torso/RemoteFarArm:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -216,7 +217,7 @@ tracks/16/path = NodePath("Torso/RemoteFarArm/RemoteFarHand:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3.57628e-07, 11)]
@@ -228,7 +229,7 @@ tracks/17/path = NodePath("Torso/RemoteFarArm/RemoteFarHand:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -240,7 +241,7 @@ tracks/18/path = NodePath("Torso/RemoteNearArm:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-8, -44)]
@@ -252,7 +253,7 @@ tracks/19/path = NodePath("Torso/RemoteNearArm:rotation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-0.0398524]
@@ -264,7 +265,7 @@ tracks/20/path = NodePath("Torso/RemoteNearArm/RemoteNearHand:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.560947, 11.0311)]
@@ -276,7 +277,7 @@ tracks/21/path = NodePath("Torso/RemoteNearArm/RemoteNearHand:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-0.115703]
@@ -288,7 +289,7 @@ tracks/22/path = NodePath("Near Leg:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-3, 6.85714)]
@@ -300,7 +301,7 @@ tracks/23/path = NodePath("Near Leg:rotation")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.5708]
@@ -422,3 +423,7 @@ visible = false
 position = Vector2(1.5, -9.35712)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d7sqe")
+
+[node name="LineOfSight" parent="." instance=ExtResource("15_gtcer")]
+unique_name_in_owner = true
+position = Vector2(1.42857, -28.5714)

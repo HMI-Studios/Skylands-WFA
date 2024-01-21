@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var entities = get_node('/root/Main/World/Level/Entities')
+@onready var player = get_node('/root/Main/Player')
 
 @export var HP = 1
 
