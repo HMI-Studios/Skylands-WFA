@@ -23,6 +23,9 @@ func set_level(path):
     var scene = load("res://scenes/levels/%s.tscn" % path)
     level = scene.instantiate()
     add_child(level)
+    var spawn = get_spawn_pos()
+    %Player.position = spawn
+    %Camera.position = spawn
     
     
 func get_spawn_pos():

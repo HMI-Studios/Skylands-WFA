@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://c24tpnc7epxp0"]
+[gd_scene load_steps=21 format=3 uid="uid://c24tpnc7epxp0"]
 
 [ext_resource type="Script" path="res://scripts/entities/Shoaldier.gd" id="1_5wlpc"]
 [ext_resource type="Texture2D" uid="uid://bql5y3im6lfpd" path="res://assets/shoaldier/arm_far.png" id="1_g5phy"]
 [ext_resource type="Texture2D" uid="uid://bw6cbqpl4j4ut" path="res://assets/shoaldier/hand_far.png" id="2_fcsgq"]
+[ext_resource type="Script" path="res://scripts/entities/BipedRig.gd" id="2_hp4gw"]
 [ext_resource type="Texture2D" uid="uid://xydddgxqydqg" path="res://assets/shoaldier/leg_far.png" id="3_l3dsq"]
 [ext_resource type="Texture2D" uid="uid://csoxd44pgpx8y" path="res://assets/shoaldier/foot_far.png" id="4_eg41d"]
 [ext_resource type="Texture2D" uid="uid://bwl60os18wmov" path="res://assets/shoaldier/torso.png" id="5_w0xcr"]
@@ -325,15 +326,18 @@ script = ExtResource("1_5wlpc")
 
 [node name="Rig" type="Node2D" parent="."]
 position = Vector2(0, -2.61901)
+script = ExtResource("2_hp4gw")
 
 [node name="Far Arm" type="Sprite2D" parent="Rig"]
 show_behind_parent = true
 position = Vector2(13, -12.1429)
+scale = Vector2(1, 1)
 texture = ExtResource("1_g5phy")
 offset = Vector2(0, 4)
 
 [node name="Far Hand" type="Sprite2D" parent="Rig"]
 position = Vector2(13, -1.1429)
+scale = Vector2(1, 1)
 texture = ExtResource("2_fcsgq")
 offset = Vector2(-2, 11)
 
@@ -398,12 +402,14 @@ offset = Vector2(6, -1)
 [node name="Near Arm" type="Sprite2D" parent="Rig"]
 position = Vector2(-9, -15.1429)
 rotation = -0.0398524
+scale = Vector2(1, 1)
 texture = ExtResource("11_egsml")
 offset = Vector2(0, 3)
 
 [node name="Near Hand" type="Sprite2D" parent="Rig"]
 position = Vector2(-8, -4.14291)
 rotation = -0.155555
+scale = Vector2(1, 1)
 texture = ExtResource("12_1n1wc")
 offset = Vector2(-2, 11)
 
