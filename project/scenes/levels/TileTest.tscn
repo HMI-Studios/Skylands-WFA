@@ -160,6 +160,7 @@ position = Vector2(262, -125)
 [node name="Door1" parent="." instance=ExtResource("3_shker")]
 unique_name_in_owner = true
 position = Vector2(184, -121)
+speed = 1.5
 
 [node name="Door1Opener" type="Area2D" parent="."]
 unique_name_in_owner = true

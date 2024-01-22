@@ -5,7 +5,8 @@ extends AnimatableBody2D
 @onready var height = %Sprite.texture.get_size().y
 var state = 0
 var target_state = 0
-@export var speed = 1
+@export var speed = 1.0
+@export var transform_fn = identity
 
 
 func open():
@@ -14,14 +15,18 @@ func open():
     
 func close():
     target_state = 0
+    
+    
+func identity(x):
+    return x
 
 
 func _process(delta):
     if state > target_state:
-        state -= speed * delta
+        state -= min(speed * delta, state - target_state)
     elif state < target_state:
-        state += speed * delta
+        state += min(speed * delta, target_state - state)
     else:
         return
         
-    position = origin + Vector2(0, -height * state)
+    position = origin + Vector2(0, -height * transform_fn.call(state))
