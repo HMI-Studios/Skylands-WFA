@@ -28,7 +28,6 @@ func _ready():
     # var character_rig_scene = load("res://CharacterRig.tscn")
     animation_player = get_node("CharacterRig/AnimationPlayer")
     # animation_player.connect("animation_finished", self._on_animation_finished)
-    position = %World.get_spawn_pos()
     is_gun_in_right_hand = true
     near_gun.add_child(gun)
 #    gun.position = Vector2(0, 65)

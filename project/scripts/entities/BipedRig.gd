@@ -54,17 +54,13 @@ func aim_at(delta, pos):
             aim_vec = (pos - near_hand.global_position).normalized()
             aim_angle = aim_vec.angle()
         var diff = (aim_angle - PI/2) - near_arm.rotation
-        print(diff)
         diff = fmod(diff + PI, PI*2) - PI
-        print(diff, ' ', aim_angle, ' ', near_arm.rotation)
         if abs(diff) > aim_speed * delta:
-            print(aim_speed * delta * sign(diff))
             near_arm.rotation += aim_speed * delta * sign(diff)
             return_vec = Vector2(0, 1).rotated(near_arm.rotation)
         else:
             near_arm.rotation += diff
             return_vec = aim_vec
-        print(rad_to_deg(near_arm.rotation))
         far_arm.rotation = 0
         near_hand.rotation = 0.1
     else:
@@ -73,14 +69,12 @@ func aim_at(delta, pos):
             aim_angle = aim_vec.angle()
         var diff = (-aim_angle + PI/2) - far_arm.rotation
         diff = fmod(diff + PI, PI*2) - PI
-        print(rad_to_deg(diff), ' ', rad_to_deg(aim_angle), ' ', rad_to_deg(far_arm.rotation))
         if abs(diff) > aim_speed * delta:
             far_arm.rotation += aim_speed * delta * sign(diff)
             return_vec = Vector2(0, 1).rotated(far_arm.rotation)
         else:
             far_arm.rotation += diff
             return_vec = aim_vec
-        print(rad_to_deg(far_arm.rotation))
         near_arm.rotation = 0
         far_hand.rotation = 0.1
         
