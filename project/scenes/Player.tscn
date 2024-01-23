@@ -16,3 +16,8 @@ position = Vector2(-4.76837e-07, 2)
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -19)
 shape = SubResource("RectangleShape2D_ytk7r")
+
+[node name="GunRay" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -56)
+collision_mask = 16

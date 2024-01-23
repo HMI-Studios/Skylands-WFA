@@ -32,9 +32,8 @@ func _ready():
     near_gun.add_child(gun)
 #    gun.position = Vector2(0, 65)
     gun.rotation = PI/2
-    
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta):
     velocity += Global.gravity * delta
     horizontal_movement()
@@ -78,7 +77,10 @@ func handle_gun():
             far_gun.add_child(gun)
             
     if Input.is_action_pressed("shoot"):
-        gun.shoot(aim_vec)
+        %GunRay.target_position = (gun.global_position - %GunRay.global_position) / scale
+        %GunRay.force_raycast_update()
+        if not %GunRay.is_colliding():
+            gun.shoot(aim_vec)
 
     
 func horizontal_movement():

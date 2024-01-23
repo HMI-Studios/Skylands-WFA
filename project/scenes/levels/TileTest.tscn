@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bgf7ubc1l43at"]
+[gd_scene load_steps=27 format=3 uid="uid://bgf7ubc1l43at"]
 
 [ext_resource type="Script" path="res://scripts/levels/TileTest.gd" id="1_jgvly"]
 [ext_resource type="Texture2D" uid="uid://c0snlmb2r4unk" path="res://assets/tiles/atlas.png" id="1_lwex1"]
@@ -138,8 +138,17 @@ sources/0 = SubResource("TileSetAtlasSource_23kaw")
 [sub_resource type="CircleShape2D" id="CircleShape2D_4itay"]
 radius = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct6qe"]
+size = Vector2(62, 48)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l34hl"]
 size = Vector2(119, 93.5)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wd5nx"]
+vertices = PackedVector2Array(213, -245, 372, -243, 371, -243, 214, -210, 342, -209, 619, -117, 299, 44, 198, 44, 198, -1, 295, -59, 562, -116, 105, -1, 105, 43, -59, 43, -59, -59, 593, -151, 669, -192, 300, -115, 213, -115, 213, -155, 321, -156, 381, -162, 348, -199, 666, -117, 586, -221, 587, -163, 467, -238, 518, -163, 492, -167, 453, -166, 433, -162)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(11, 14, 9, 8), PackedInt32Array(5, 10, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 17, 20, 22), PackedInt32Array(16, 23, 5), PackedInt32Array(24, 16, 15, 25), PackedInt32Array(26, 24, 25, 27, 28), PackedInt32Array(26, 28, 29, 2), PackedInt32Array(2, 29, 30, 21, 22, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-69, 53, -69, -69, 294, -69, 557, -125, 581, -153, 516, -153, 491, -157, 454, -156, 435, -152, 384, -152, 304, -106, 204, -105, 203, -165, 315, -166, 336, -199, 205, -201, 203, -256, 372, -253, 468, -248, 587, -231, 680, -199, 676, -107, 621, -107, 302, 54, 188, 54, 188, 9, 115, 9, 115, 53)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uunbq"]
 atlas = ExtResource("1_lwex1")
@@ -191,7 +200,7 @@ layer_0/tile_data = PackedInt32Array(196616, 65536, 0, 131080, 65536, 0, 65544, 
 
 [node name="Spawn" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(410, -177)
+position = Vector2(-1137, 62)
 
 [node name="Exit" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -233,8 +242,8 @@ collision_layer = 42
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door1Opener"]
-position = Vector2(-5, 12)
-shape = SubResource("RectangleShape2D_l34hl")
+position = Vector2(4, 12)
+shape = SubResource("RectangleShape2D_ct6qe")
 
 [node name="Door2Opener" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -245,6 +254,10 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2Opener"]
 position = Vector2(-42.5, 36.25)
 shape = SubResource("RectangleShape2D_l34hl")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_wd5nx")
 
 [node name="Slopes" type="Node2D" parent="."]
 z_index = 1
