@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Skylands"
-run/main_scene="res://ui/Intro.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://assets/icon.png"
@@ -64,6 +64,17 @@ shoot={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Solid"
+2d_physics/layer_2="Non-Solid"
+2d_physics/layer_3="Opaque"
+2d_physics/layer_4="Transparent"
+2d_physics/layer_5="Shootable"
+2d_physics/layer_6="Non-shootable"
+2d_physics/layer_7="Friendly"
+2d_physics/layer_8="Enemy"
 
 [rendering]
 

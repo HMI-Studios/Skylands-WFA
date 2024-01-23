@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://scripts/entities/LineOfSight.gd" id="1_lm2y6"]
 
 [node name="LineOfSight" type="RayCast2D"]
+collision_mask = 68
 script = ExtResource("1_lm2y6")

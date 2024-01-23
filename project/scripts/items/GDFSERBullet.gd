@@ -12,7 +12,7 @@ extends RigidBody2D
 var start_speed = 0
 
 
-func _ready():
+func _ready(): 
     pass # Replace with function body.
     
     

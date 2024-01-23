@@ -2,9 +2,10 @@ extends AnimatableBody2D
 
 
 @onready var origin = position
-@onready var height = %Sprite.texture.get_size().y
-var state = 0
-var target_state = 0
+#@onready var height = %Sprite.texture.get_size().y
+@onready var height = $Collider.shape.get_rect().size.y
+@export var state = 0
+@export var target_state = 0
 @export var speed = 1.0
 @export var transform_fn = identity
 
