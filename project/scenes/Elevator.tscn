@@ -14,6 +14,7 @@ fill_to = Vector2(0, 0)
 size = Vector2(64, 64)
 
 [node name="Elevator" type="Area2D"]
+collision_mask = 256
 gravity_space_override = 1
 gravity = -1360.57
 script = ExtResource("1_7yy0m")

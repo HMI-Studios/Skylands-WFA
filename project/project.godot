@@ -75,6 +75,7 @@ shoot={
 2d_physics/layer_6="Non-shootable"
 2d_physics/layer_7="Friendly"
 2d_physics/layer_8="Enemy"
+2d_physics/layer_9="Entity"
 
 [rendering]
 

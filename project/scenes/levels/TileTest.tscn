@@ -199,7 +199,7 @@ speed = 1.5
 unique_name_in_owner = true
 position = Vector2(205, -132)
 collision_layer = 42
-collision_mask = 16
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door1Opener"]
 position = Vector2(-5, 12)
