@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var player = get_node("/root/Main/Player")
+var player
 
 
 func door_1_animation_fn(x):
@@ -9,8 +9,11 @@ func door_1_animation_fn(x):
 
 
 func _ready():
+    player = get_node("/root/Main/Player")
     %Door1.transform_fn = door_1_animation_fn
     %Door2.transform_fn = door_1_animation_fn
+    
+    $Entities/Shoaldier3.pathfinder.set_path([Vector2(-614, 47), Vector2(-156, 47)])
 
 
 func _on_door_1_opener_body_entered(body):

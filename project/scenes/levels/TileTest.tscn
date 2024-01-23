@@ -182,14 +182,14 @@ layer_0/tile_data = PackedInt32Array(18, 0, 2, -65518, 0, 2, -131054, 0, 2, -196
 [node name="Shoaldier1" parent="Entities" instance=ExtResource("2_b037t")]
 position = Vector2(124, -111)
 
-[node name="Shoaldier4" parent="Entities" instance=ExtResource("2_b037t")]
-position = Vector2(43, -113)
-
 [node name="Shoaldier2" parent="Entities" instance=ExtResource("2_b037t")]
 position = Vector2(264, 47)
 
 [node name="Shoaldier3" parent="Entities" instance=ExtResource("2_b037t")]
-position = Vector2(-352, 48)
+position = Vector2(-156, 47)
+
+[node name="Shoaldier4" parent="Entities" instance=ExtResource("2_b037t")]
+position = Vector2(43, -113)
 
 [node name="Hitboxes" type="TileMap" parent="."]
 light_mask = 2
@@ -200,7 +200,7 @@ layer_0/tile_data = PackedInt32Array(196616, 65536, 0, 131080, 65536, 0, 65544, 
 
 [node name="Spawn" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-1137, 62)
+position = Vector2(-337, 26)
 
 [node name="Exit" type="Area2D" parent="."]
 unique_name_in_owner = true

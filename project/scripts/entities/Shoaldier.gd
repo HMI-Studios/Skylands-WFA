@@ -1,13 +1,11 @@
-extends "Entity.gd"
+extends "RiggedEntity.gd"
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
 
 var Bullet = preload("res://scenes/items/GDFSERBullet.tscn")
 var cooldown = 1
 
-@onready var rig = get_node("Rig")
+var desired_player_distane = randf_range(80, 100)
+
 var gun_hand
 
 var is_gun_in_right_hand
@@ -29,27 +27,19 @@ func _physics_process(delta):
     if cooldown > 0:
         cooldown = max(cooldown - delta, 0)
 
-    # Handle Jump.
-#    if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-#        velocity.y = JUMP_VELOCITY
-
-    # Get the input direction and handle the movement/deceleration.
-    # As good practice, you should replace UI actions with custom gameplay actions.
-#    var direction = Input.get_axis("ui_left", "ui_right")
-#    if direction:
-#        velocity.x = direction * SPEED
-#    else:
-#        velocity.x = move_toward(velocity.x, 0, SPEED)
+    super._physics_process(delta)
 
     if %LineOfSight.is_player_in_sight():
         if rig.animation_player.is_playing():
             rig.animation_player.stop()
         handle_gun(delta)
+        var diff = player.global_position - global_position
+        pathfinder.override_target(player.global_position + -(diff.normalized() * desired_player_distane))
+        #if diff.length() < 75 or diff.length() > 105:
     else:
+        pathfinder.clear_override()
         if not rig.animation_player.is_playing():
             rig.animation_player.play("Idle")
-
-    super._physics_process(delta)
     
     
 func shoot(vec):
@@ -86,5 +76,4 @@ func handle_gun(delta):
            
     var aim_vec = rig.aim_at(delta, player.global_position)
     if aim_vec:
-        pass
-#        shoot(aim_vec)
+        shoot(aim_vec)
