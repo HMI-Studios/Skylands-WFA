@@ -13,7 +13,7 @@ height = 50
 size = Vector2(13, 48)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mrd7j"]
-polygon = PackedVector2Array(-6, -24, 7, -24, 7, 24, -6, 24)
+polygon = PackedVector2Array(-6, -24, 6, -24, 6, 24, -6, 24)
 
 [node name="Door" type="AnimatableBody2D"]
 script = ExtResource("1_8ups1")

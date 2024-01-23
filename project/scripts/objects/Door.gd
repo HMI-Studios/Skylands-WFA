@@ -3,7 +3,7 @@ extends AnimatableBody2D
 
 @onready var origin = position
 #@onready var height = %Sprite.texture.get_size().y
-@onready var height = $Collider.shape.get_rect().size.y
+@onready var height = ($Collider.shape.get_rect().size * scale).y
 @export var state = 0
 @export var target_state = 0
 @export var speed = 1.0
@@ -30,4 +30,4 @@ func _process(delta):
     else:
         return
         
-    position = origin + Vector2(0, -height * transform_fn.call(state))
+    position = origin + Vector2(0, -height * transform_fn.call(state)).rotated(rotation)
