@@ -9,6 +9,8 @@ extends CharacterBody2D
 var screen_size # Size of the game window.
 var animation_player : AnimationPlayer
 
+@onready var world = get_node("/root/Main/World")
+
 @onready var rig = get_node("CharacterRig")
 @onready var near_arm = rig.get_node("Hips/Torso/RemoteNearArm")
 @onready var near_hand = rig.get_node("Hips/Torso/RemoteNearArm/RemoteNearHand")
@@ -111,9 +113,9 @@ func horizontal_movement():
 func hurt(dmg):
     HP -= dmg
     if HP <= 0:
-        position = %World.get_spawn_pos()
+        position = world.get_spawn_pos()
         HP = 20
-        %World.reset()
+        world.reset()
     
     
 func play_walk_animation():
