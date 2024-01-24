@@ -8,6 +8,7 @@ var pathfinder = preload("res://scripts/entities/Pathfinder.gd").new()
 
 @export var HP = 1
 @export var speed = 40
+@export var flying = false
     
 
 func hurt(dmg):
@@ -21,6 +22,12 @@ func die():
     call_deferred("queue_free")
     
     
+func can_walk_towards(diff):
+    %PathRay.position = diff.normalized() * speed
+    %PathRay.force_raycast_update()
+    return %PathRay.is_colliding()
+    
+    
 func handle_movement(delta):
     var target = pathfinder.get_target(global_position)
     if target:
@@ -28,7 +35,7 @@ func handle_movement(delta):
         var angle = fmod(diff.angle() + PI*1.5, PI*2) - PI
         if abs(angle) < 0.7:
             pass #jump
-        else:
+        elif can_walk_towards(diff):
             velocity.x += speed * sign(diff.x)
         velocity *= 0.6
     else:
