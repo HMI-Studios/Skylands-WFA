@@ -75,5 +75,5 @@ func handle_gun(delta):
             is_gun_in_right_hand = false
            
     var aim_vec = rig.aim_at(delta, player.global_position)
-    if aim_vec:
-        shoot(aim_vec)
+    #if aim_vec:
+        #shoot(aim_vec)

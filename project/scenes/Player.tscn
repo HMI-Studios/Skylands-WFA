@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1qc8yhb5ng87" path="res://scenes/CharacterRig.tscn" id="2_q3yxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ytk7r"]
-size = Vector2(80, 265)
+size = Vector2(28, 71)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 346
@@ -14,7 +14,7 @@ script = ExtResource("1_yiqff")
 position = Vector2(-4.76837e-07, 2)
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -19)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_ytk7r")
 
 [node name="GunRay" type="RayCast2D" parent="."]
