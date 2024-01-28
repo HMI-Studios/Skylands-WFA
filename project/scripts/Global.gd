@@ -1,6 +1,6 @@
 extends Node
 
-var DEBUG = false
+var DEBUG = true
 
 @export var play_music = true
 

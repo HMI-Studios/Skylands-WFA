@@ -332,13 +332,11 @@ script = ExtResource("2_hp4gw")
 [node name="Far Arm" type="Sprite2D" parent="Rig"]
 show_behind_parent = true
 position = Vector2(13, -12.1429)
-scale = Vector2(1, 1)
 texture = ExtResource("1_g5phy")
 offset = Vector2(0, 4)
 
 [node name="Far Hand" type="Sprite2D" parent="Rig"]
 position = Vector2(13, -1.1429)
-scale = Vector2(1, 1)
 texture = ExtResource("2_fcsgq")
 offset = Vector2(-2, 11)
 
@@ -403,14 +401,12 @@ offset = Vector2(6, -1)
 [node name="Near Arm" type="Sprite2D" parent="Rig"]
 position = Vector2(-9, -15.1429)
 rotation = -0.0398524
-scale = Vector2(1, 1)
 texture = ExtResource("11_egsml")
 offset = Vector2(0, 3)
 
 [node name="Near Hand" type="Sprite2D" parent="Rig"]
 position = Vector2(-8, -4.14291)
 rotation = -0.155555
-scale = Vector2(1, 1)
 texture = ExtResource("12_1n1wc")
 offset = Vector2(-2, 11)
 
