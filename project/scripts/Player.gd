@@ -50,6 +50,7 @@ func _physics_process(delta):
 func handle_gun():
     var mouse_pos = get_global_mouse_position()
     var look_vec = mouse_pos - position
+    look_vec = Vector2(look_vec.x, 0)
     facing_angle = look_vec.angle()
     aim_angle = facing_angle
     var aim_vec = look_vec.normalized()
@@ -57,6 +58,7 @@ func handle_gun():
     if facing_right:
         if look_vec.length() > 22:
             aim_vec = (mouse_pos - near_hand.global_position).normalized()
+            aim_vec = Vector2(aim_vec.x, 0)
             aim_angle = aim_vec.angle()
         rig.scale.x = 1
         far_arm.rotation = 0
@@ -69,6 +71,7 @@ func handle_gun():
     else:
         if look_vec.length() > 22:
             aim_vec = (mouse_pos - far_hand.global_position).normalized()
+            aim_vec = Vector2(aim_vec.x, 0)
             aim_angle = aim_vec.angle()
         rig.scale.x = -1
         near_arm.rotation = 0
@@ -132,7 +135,6 @@ func play_walk_animation():
     else:
         direction_sign = -1
     var animation_speed = abs(velocity.x) * 0.014 * (sign(velocity.x) * direction_sign)
-    print(velocity.x, ' ', direction_sign, ' ', velocity.x, ' ', animation_speed)
     if not animation_player.is_playing():
         animation_player.play("Walk")
     animation_player.set_speed_scale(animation_speed)
