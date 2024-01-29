@@ -107,10 +107,14 @@ func horizontal_movement(delta):
             velocity += get_last_slide_collision().get_normal() * speed
             Global.can_wall_jump = false
 
-    if abs(velocity.x) > 10:
-        play_walk_animation()
+    if is_on_floor():
+        if abs(velocity.x) > 10:
+            play_walk_animation()
+        else:
+            stop_walk_animation()
+            animation_player.play("Idle")
     else:
-        stop_walk_animation()
+        animation_player.play("Jump")
 
 
 func hurt(dmg):
