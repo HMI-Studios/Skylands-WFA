@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 60
-@export var max_speed = 120
+@export var max_speed = 140
 @export var jump_height = -266
 
 @export var HP = 20
@@ -19,6 +19,7 @@ var animation_player : AnimationPlayer
 @onready var far_hand = rig.get_node("Hips/Torso/RemoteFarArm/RemoteFarHand")
 @onready var far_gun = rig.get_node("Far Hand/FarGunSlot")
 var aim_angle
+var facing_angle
 
 var is_gun_in_right_hand
 var gun = preload("res://scenes/items/GDFSER.tscn").instantiate()
@@ -38,7 +39,7 @@ func _ready():
 
 func _physics_process(delta):
     velocity += Global.gravity * delta
-    horizontal_movement()
+    horizontal_movement(delta)
     move_and_slide()
     
     if !Global.can_wall_jump and is_on_floor():
@@ -49,7 +50,7 @@ func _physics_process(delta):
 func handle_gun():
     var mouse_pos = get_global_mouse_position()
     var look_vec = mouse_pos - position
-    var facing_angle = look_vec.angle()
+    facing_angle = look_vec.angle()
     aim_angle = facing_angle
     var aim_vec = look_vec.normalized()
     var facing_right = rad_to_deg(abs(facing_angle)) <= 90
@@ -85,10 +86,13 @@ func handle_gun():
             gun.shoot(aim_vec)
 
     
-func horizontal_movement():
+func horizontal_movement(delta):
     var horizontal_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-    if horizontal_input != 0 and abs(velocity.x) < max_speed:
-        velocity.x += horizontal_input * speed
+    if horizontal_input != 0:
+        if abs(velocity.x) < max_speed:
+            velocity.x += horizontal_input * speed
+        else:
+            velocity.x = horizontal_input * max_speed
     else:
         if is_on_floor():
             velocity.x *= 0.6
@@ -103,11 +107,10 @@ func horizontal_movement():
             velocity += get_last_slide_collision().get_normal() * speed
             Global.can_wall_jump = false
 
-#    if velocity.length() > 0:
-#        velocity = velocity.normalized() * speed
-#        play_walk_animation()
-#    else:
-#        stop_walk_animation()
+    if abs(velocity.x) > 10:
+        play_walk_animation()
+    else:
+        stop_walk_animation()
 
 
 func hurt(dmg):
@@ -119,8 +122,16 @@ func hurt(dmg):
     
     
 func play_walk_animation():
+    var direction_sign
+    if rad_to_deg(abs(facing_angle)) <= 90:
+        direction_sign = 1
+    else:
+        direction_sign = -1
+    var animation_speed = abs(velocity.x) * 0.014 * (sign(velocity.x) * direction_sign)
+    print(velocity.x, ' ', direction_sign, ' ', velocity.x, ' ', animation_speed)
     if not animation_player.is_playing():
-        animation_player.play("Run")
+        animation_player.play("Walk")
+    animation_player.set_speed_scale(animation_speed)
 
 func stop_walk_animation():
     if animation_player.is_playing():
