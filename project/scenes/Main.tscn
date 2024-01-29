@@ -33,7 +33,7 @@ texture_scale = 20.0
 
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
 script = ExtResource("3_3x1oi")
 
 [node name="HUD" parent="." instance=ExtResource("4_x3ds7")]
