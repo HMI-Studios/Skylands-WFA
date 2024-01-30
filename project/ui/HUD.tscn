@@ -57,30 +57,21 @@ shadow_color = Color(0, 0, 0, 0.505882)
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_v7hy8")
 
-[node name="Container" type="Control" parent="."]
+[node name="Node2D" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
-[node name="Control" type="Control" parent="Container"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-grow_horizontal = 0
-
-[node name="HealthBar" type="TextureProgressBar" parent="Container/Control"]
+[node name="HealthBar" type="TextureProgressBar" parent="Node2D"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -191.0
+offset_left = 578.0
+offset_right = 769.0
 offset_bottom = 77.0
 grow_horizontal = 0
+scale = Vector2(2, 2)
 min_value = -2.0
 max_value = 20.0
 fill_mode = 1
@@ -89,36 +80,26 @@ texture_over = ExtResource("1_3fvn3")
 texture_progress = ExtResource("3_vrgp0")
 texture_progress_offset = Vector2(4, 27)
 
-[node name="Control2" type="Control" parent="Container"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="PauseBtn" type="TextureRect" parent="Container/Control2"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -67.0
+[node name="PauseBtn" type="TextureRect" parent="Node2D"]
+offset_top = 586.0
 offset_right = 42.0
-grow_vertical = 0
+offset_bottom = 653.0
+scale = Vector2(2, 2)
 texture = ExtResource("2_iaojn")
 
-[node name="Control3" type="Control" parent="Container"]
-layout_mode = 1
+[node name="GemContainer" type="Control" parent="Node2D"]
+layout_mode = 3
 anchors_preset = 0
 grow_horizontal = 0
+scale = Vector2(2, 2)
 
-[node name="Gem" type="AnimatedSprite2D" parent="Container/Control3"]
+[node name="Gem" type="AnimatedSprite2D" parent="Node2D/GemContainer"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_kav78")
 centered = false
 offset = Vector2(10, 10)
 
-[node name="GemLabel" type="Label" parent="Container/Control3"]
+[node name="GemLabel" type="Label" parent="Node2D/GemContainer"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 44.0

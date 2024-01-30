@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgvv8hfyoj12e"]
 
 [ext_resource type="Script" path="res://scripts/Intro.gd" id="1_xs0yq"]
-[ext_resource type="Texture2D" uid="uid://pmjenegwktut" path="res://assets/intro.png" id="2_6h0tf"]
+[ext_resource type="Texture2D" uid="uid://c54wpqoj2ddde" path="res://assets/intro.png" id="2_6h0tf"]
 [ext_resource type="Script" path="res://scripts/ContainBackground.gd" id="3_0pkqp"]
-[ext_resource type="AudioStream" uid="uid://c5na3887so0x8" path="res://assets/music/Skylands Theme Start.ogg" id="4_x5so1"]
+[ext_resource type="AudioStream" uid="uid://u8pvqvcf68k8" path="res://assets/music/Skylands Theme Start.ogg" id="4_x5so1"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
