@@ -10,6 +10,7 @@ func _ready():
     
 func reset():
     set_level("TileTest")
+    %Player.reset()
 
 
 func _process(delta):
