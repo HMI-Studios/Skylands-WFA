@@ -109,7 +109,7 @@ func handle_gun():
                 shortest_distance = diff.length()
                 aim_target = entity
     elif Input.is_action_pressed("scope"):
-        pass
+        last_movement_direction = 1 if facing_right else -1
     elif Input.is_action_just_released("scope"):
         aim_target = null
 
