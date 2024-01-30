@@ -81,6 +81,7 @@ texture_progress = ExtResource("3_vrgp0")
 texture_progress_offset = Vector2(4, 27)
 
 [node name="PauseBtn" type="TextureRect" parent="Node2D"]
+layout_mode = 0
 offset_top = 586.0
 offset_right = 42.0
 offset_bottom = 653.0
