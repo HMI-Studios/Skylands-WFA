@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends VBoxContainer
 
 
 @export var action: String
@@ -11,27 +11,27 @@ func _ready():
     assert(action)
     assert(title)
     
-    %Title.text = title
+    $Title.text = title
     if len(InputMap.action_get_events(action)) > 0:
-        $Keybind.text = InputMap.action_get_events(action)[0].as_text()
+        $Btn.text = InputMap.action_get_events(action)[0].as_text()
     else:
-        $Keybind.text = "<Unassigned>"
+        $Btn.text = "<Unassigned>"
 
 
 func _on_btn_toggled(toggled_on):
     button_pressed = toggled_on
     set_process_unhandled_input(button_pressed)
     if button_pressed:
-        $Keybind.text = "<Press Key>"
+        $Btn.text = "<Press Key>"
         release_focus()
     else:
-        $Keybind.text = InputMap.action_get_events(action)[0].as_text()
+        $Btn.text = InputMap.action_get_events(action)[0].as_text()
         grab_focus()
 
 
 func _unhandled_input(event):
-    if event.pressed and button_pressed:
+    if is_instance_of(event, InputEventKey) and event.pressed and button_pressed:
         InputMap.action_erase_events(action)
         InputMap.action_add_event(action, event)
         button_pressed = false
-        $Keybind.text = InputMap.action_get_events(action)[0].as_text()
+        $Btn.text = InputMap.action_get_events(action)[0].as_text()

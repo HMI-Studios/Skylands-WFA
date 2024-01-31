@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ControlsMenu.gd" id="1_5ppfk"]
 [ext_resource type="PackedScene" uid="uid://cqmaewq3obtoo" path="res://ui/ControlAssignBtn.tscn" id="2_2qdy6"]
-[ext_resource type="FontFile" uid="uid://bvkcwtbd2ly5q" path="res://assets/PressStart2P-Regular.ttf" id="3_syjl6"]
+[ext_resource type="Theme" uid="uid://bncx8ccsmusd0" path="res://ui/ButtonTheme.tres" id="3_tcoif"]
 
 [node name="Controls" type="Control"]
 layout_mode = 3
@@ -15,30 +15,33 @@ script = ExtResource("1_5ppfk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 60.0
+offset_left = 110.0
 offset_top = 60.0
-offset_right = 460.0
-offset_bottom = 196.0
-scale = Vector2(1.00128, 1.00306)
+offset_right = 440.0
+offset_bottom = 440.0
 theme_override_constants/separation = 8
 
 [node name="Move Left" parent="VBoxContainer" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "move_left"
 title = "Move Left"
 
 [node name="Move Right" parent="VBoxContainer" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "move_right"
 title = "Move Right"
 
 [node name="Sneak" parent="VBoxContainer" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "sneak"
 title = "Sneak"
 
 [node name="Jump" parent="VBoxContainer" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "jump"
 title = "Jump"
 
@@ -46,42 +49,57 @@ title = "Jump"
 layout_mode = 0
 offset_left = 520.0
 offset_top = 60.0
-offset_right = 920.0
-offset_bottom = 196.0
+offset_right = 850.0
+offset_bottom = 440.0
 scale = Vector2(1.00128, 1.00306)
 theme_override_constants/separation = 8
 
 [node name="Roll" parent="VBoxContainer2" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "roll"
 title = "Roll"
 
 [node name="Shoot" parent="VBoxContainer2" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "shoot"
 title = "Shoot"
 
 [node name="Use Scope" parent="VBoxContainer2" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "scope"
 title = "Use Scope"
 
 [node name="Reload" parent="VBoxContainer2" instance=ExtResource("2_2qdy6")]
 layout_mode = 2
+size_flags_vertical = 3
 action = "reload"
 title = "Reload"
 
+[node name="Reset" type="Button" parent="."]
+layout_mode = 2
+offset_left = 340.0
+offset_top = 500.0
+offset_right = 620.0
+offset_bottom = 550.0
+theme = ExtResource("3_tcoif")
+text = "Restore Defaults"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 400.0
+offset_left = 340.0
 offset_top = 620.0
-offset_right = 560.0
+offset_right = 620.0
 offset_bottom = 670.0
 alignment = 1
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_syjl6")
+size_flags_horizontal = 3
+theme = ExtResource("3_tcoif")
 text = "Return to Menu"
 
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
