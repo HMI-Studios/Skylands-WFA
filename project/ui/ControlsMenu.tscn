@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://uwt41n1iomjo"]
+[gd_scene load_steps=4 format=3 uid="uid://uwt41n1iomjo"]
 
 [ext_resource type="Script" path="res://scripts/ControlsMenu.gd" id="1_5ppfk"]
 [ext_resource type="PackedScene" uid="uid://cqmaewq3obtoo" path="res://ui/ControlAssignBtn.tscn" id="2_2qdy6"]
+[ext_resource type="FontFile" uid="uid://bvkcwtbd2ly5q" path="res://assets/PressStart2P-Regular.ttf" id="3_syjl6"]
 
 [node name="Controls" type="Control"]
 layout_mode = 3
@@ -80,6 +81,7 @@ alignment = 1
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_syjl6")
 text = "Return to Menu"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
