@@ -18,3 +18,7 @@ func _on_new_game_pressed():
     Transition.set_color(Color(0, 0, 0))
     MenuMusic.fade_out(1)
     Transition.fade(1, game)
+
+
+func _on_settings_pressed():
+    get_tree().change_scene_to_file("res://ui/ControlsMenu.tscn")

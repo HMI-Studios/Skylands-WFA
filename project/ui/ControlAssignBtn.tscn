@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqmaewq3obtoo"]
+
+[ext_resource type="Script" path="res://scripts/ControlAssignBtn.gd" id="1_g4wei"]
+[ext_resource type="Texture2D" uid="uid://cmmfy86r88xr6" path="res://assets/menu/button1.png" id="1_vr51g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e8cph"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_swjxq"]
+font_size = 24
+font_color = Color(0.4, 0.4, 0.4, 1)
+
+[node name="ControlAssignBtn" type="HBoxContainer"]
+offset_right = 400.0
+offset_bottom = 40.0
+script = ExtResource("1_g4wei")
+
+[node name="Btn" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource("1_vr51g")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="Btn"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Action"
+label_settings = SubResource("LabelSettings_e8cph")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybind" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "C"
+label_settings = SubResource("LabelSettings_swjxq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="toggled" from="Btn" to="." method="_on_btn_toggled"]

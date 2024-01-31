@@ -13,10 +13,13 @@ func set_color(color):
     
     
 func fade(speed, next_scene):
-    fade_out(speed)
-    await fade_complete
-    get_tree().change_scene_to_packed(next_scene)
-    fade_in(speed)
+    if Global.play_fades:
+        fade_out(speed)
+        await fade_complete
+        get_tree().change_scene_to_packed(next_scene)
+        fade_in(speed)
+    else:
+        get_tree().change_scene_to_packed(next_scene)
 
 
 func fade_out(speed):
