@@ -37,6 +37,5 @@ func _on_door_2_opener_body_exited(body):
 
 
 func _on_exit_body_entered(body):
-    print(body)
     if body == player:
         get_node("/root/Main/World").set_level("TileTest2", %Exit.position)

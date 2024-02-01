@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-    print('hi')
+    pass
 
 
 func _on_credits_pressed():

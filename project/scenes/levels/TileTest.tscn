@@ -200,7 +200,7 @@ layer_0/tile_data = PackedInt32Array(196616, 65536, 0, 131080, 65536, 0, 65544, 
 
 [node name="Spawn" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-1128, 56)
+position = Vector2(-1137, 58)
 
 [node name="Exit" type="Area2D" parent="."]
 unique_name_in_owner = true

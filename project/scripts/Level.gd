@@ -10,7 +10,6 @@ func _ready():
     
 func reset():
     set_level("TileTest")
-    %Player.reset()
 
 
 func _process(delta):
@@ -32,6 +31,7 @@ func set_level(path, exit_pos=null):
     var spawn = get_spawn_pos() + spawn_offset
     %Player.position = spawn
     %Camera.position = spawn
+    %Player.reset()
     
     
 func get_spawn_pos():
