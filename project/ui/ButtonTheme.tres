@@ -1,6 +1,67 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bncx8ccsmusd0"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bncx8ccsmusd0"]
 
 [ext_resource type="FontFile" uid="uid://bvkcwtbd2ly5q" path="res://assets/PressStart2P-Regular.ttf" id="1_mcq5y"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phtu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cfg7"]
+bg_color = Color(0.466667, 0.466667, 0.466667, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.666667, 0.666667, 0.666667, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjiv0"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lc73r"]
+bg_color = Color(0.4, 0.4, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 default_font = ExtResource("1_mcq5y")
+Button/colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
+Button/colors/font_disabled_color = Color(0.392157, 0.392157, 0.392157, 1)
+Button/colors/font_focus_color = Color(0.996078, 0.996078, 0.996078, 1)
+Button/colors/font_hover_color = Color(0.996078, 0.996078, 0.996078, 1)
+Button/colors/font_pressed_color = Color(0.996078, 0.996078, 0.996078, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_mcq5y")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxEmpty_phtu1")
+Button/styles/hover = SubResource("StyleBoxFlat_8cfg7")
+Button/styles/normal = SubResource("StyleBoxFlat_bjiv0")
+Button/styles/pressed = SubResource("StyleBoxFlat_lc73r")

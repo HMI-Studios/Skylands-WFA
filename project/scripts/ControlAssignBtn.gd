@@ -4,8 +4,6 @@ extends VBoxContainer
 @export var action: String
 @export var title: String
 
-var button_pressed = false
-
 
 func _ready():
     assert(action)
@@ -19,9 +17,8 @@ func _ready():
 
 
 func _on_btn_toggled(toggled_on):
-    button_pressed = toggled_on
-    set_process_unhandled_input(button_pressed)
-    if button_pressed:
+    set_process_unhandled_input($Btn.button_pressed)
+    if $Btn.button_pressed:
         $Btn.text = "<Press Key>"
         release_focus()
     else:
@@ -30,8 +27,9 @@ func _on_btn_toggled(toggled_on):
 
 
 func _unhandled_input(event):
-    if is_instance_of(event, InputEventKey) and event.pressed and button_pressed:
+    if is_instance_of(event, InputEventKey) and event.pressed and $Btn.button_pressed:
         InputMap.action_erase_events(action)
         InputMap.action_add_event(action, event)
-        button_pressed = false
         $Btn.text = InputMap.action_get_events(action)[0].as_text()
+        if not (event.keycode == 32 or event.keycode == 4194309):
+            $Btn.button_pressed = false

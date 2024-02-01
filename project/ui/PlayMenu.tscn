@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/PlayMenu.gd" id="1_qkxw6"]
 [ext_resource type="Texture2D" uid="uid://dwx5qqqmj43qs" path="res://assets/menu/play_menu.png" id="2_cretc"]
+[ext_resource type="Theme" uid="uid://bncx8ccsmusd0" path="res://ui/ButtonTheme.tres" id="3_n8o1x"]
 [ext_resource type="Texture2D" uid="uid://cmmfy86r88xr6" path="res://assets/menu/button1.png" id="3_tskqo"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_nrbok"]
-font_size = 30
 
 [node name="Play Menu" type="Control"]
 layout_mode = 3
@@ -61,23 +59,12 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_constants/separation = 20
 
-[node name="New Game" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="New Game" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("3_tskqo")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/New Game"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+theme = ExtResource("3_n8o1x")
+theme_override_font_sizes/font_size = 26
 text = "New Game"
-label_settings = SubResource("LabelSettings_nrbok")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
@@ -85,24 +72,12 @@ size_flags_vertical = 3
 texture_normal = ExtResource("3_tskqo")
 stretch_mode = 0
 
-[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("3_tskqo")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Settings
-"
-label_settings = SubResource("LabelSettings_nrbok")
-horizontal_alignment = 1
-vertical_alignment = 1
+theme = ExtResource("3_n8o1x")
+theme_override_font_sizes/font_size = 26
+text = "Settings"
 
 [node name="TextureButton4" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
@@ -120,48 +95,26 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Credits" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-action_mode = 0
-texture_normal = ExtResource("3_tskqo")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Credits"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Credits"
-label_settings = SubResource("LabelSettings_nrbok")
-horizontal_alignment = 1
-vertical_alignment = 1
+theme = ExtResource("3_n8o1x")
+theme_override_font_sizes/font_size = 22
+text = "Credits
+"
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-action_mode = 0
-texture_normal = ExtResource("3_tskqo")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Exit"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Exit"
-label_settings = SubResource("LabelSettings_nrbok")
-horizontal_alignment = 1
-vertical_alignment = 1
+theme = ExtResource("3_n8o1x")
+theme_override_font_sizes/font_size = 22
+text = "Exit
+"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
