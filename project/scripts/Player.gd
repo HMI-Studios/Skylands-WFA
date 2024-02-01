@@ -23,6 +23,8 @@ var aim_angle
 var facing_angle
 var aim_target = null
 var last_movement_direction = 1
+var is_auto_aiming = false
+var is_sneaking = false
 
 var is_gun_in_right_hand
 var gun = preload("res://scenes/items/GDFSER.tscn").instantiate()
@@ -97,7 +99,9 @@ func handle_gun():
         if not $GunRay.is_colliding():
             gun.shoot(aim_vec)
             
-    if Input.is_action_just_pressed("scope"):
+    var auto_aim = is_sneaking
+    if auto_aim and not is_auto_aiming:
+        is_auto_aiming = true
         var shortest_distance = null
         for entity in entities.get_children():
             var diff = (entity.global_position - $Targeting.global_position) / scale
@@ -108,20 +112,35 @@ func handle_gun():
             if shortest_distance == null or diff.length() < shortest_distance:
                 shortest_distance = diff.length()
                 aim_target = entity
-    elif Input.is_action_pressed("scope"):
+    elif auto_aim and is_auto_aiming:
         last_movement_direction = 1 if facing_right else -1
-    elif Input.is_action_just_released("scope"):
+    elif (not auto_aim) and is_auto_aiming:
+        is_auto_aiming = false
         aim_target = null
 
     
 func horizontal_movement(delta):
+    var speed_factor = 1
+    
+    if Input.is_action_pressed("sneak"):
+        speed_factor = 0.5
+        if not is_sneaking:
+            is_sneaking = true
+            $HitBox.shape.size.y = 63
+            $HitBox.position.y = -8.5
+    else:
+        if is_sneaking:
+            is_sneaking = false
+            $HitBox.shape.size.y = 71
+            $HitBox.position.y = -4.5
+    
     var horizontal_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
     if horizontal_input != 0:
         last_movement_direction = sign(horizontal_input)
-        if abs(velocity.x) < max_speed:
-            velocity.x += horizontal_input * speed
+        if abs(velocity.x) < max_speed * speed_factor:
+            velocity.x += horizontal_input * speed * speed_factor
         else:
-            velocity.x = horizontal_input * max_speed
+            velocity.x = horizontal_input * max_speed * speed_factor
     else:
         if is_on_floor():
             velocity.x *= 0.6
@@ -141,7 +160,10 @@ func horizontal_movement(delta):
             play_walk_animation()
         else:
             stop_walk_animation()
-            animation_player.play("Idle")
+            if is_sneaking:
+                animation_player.play("Sneak-Idle")
+            else:
+                animation_player.play("Idle")
     else:
         animation_player.play("Jump")
 
@@ -161,7 +183,10 @@ func play_walk_animation():
     else:
         direction_sign = -1
     var animation_speed = abs(velocity.x) * 0.014 * (sign(velocity.x) * direction_sign)
-    if not animation_player.is_playing():
+    #if not animation_player.is_playing():
+    if is_sneaking:
+        animation_player.play("Sneak-Walk")
+    else:
         animation_player.play("Walk")
     animation_player.set_speed_scale(animation_speed)
 
