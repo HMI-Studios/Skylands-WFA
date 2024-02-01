@@ -25,6 +25,7 @@ var aim_target = null
 var last_movement_direction = 1
 var is_auto_aiming = false
 var is_sneaking = false
+var is_scoping = false
 
 var is_gun_in_right_hand
 var gun = preload("res://scenes/items/GDFSER.tscn").instantiate()
@@ -62,7 +63,7 @@ func handle_gun():
     if aim_target == null:
         look_pos = $GunRay.global_position + Vector2(last_movement_direction * 50, 0)
     else:
-        look_pos = aim_target.global_position
+        look_pos = aim_target.global_position + Vector2(0, -aim_target.head_height)
     var look_vec = look_pos - position
     facing_angle = look_vec.angle()
     aim_angle = facing_angle
@@ -122,7 +123,9 @@ func handle_gun():
 func horizontal_movement(delta):
     var speed_factor = 1
     
-    if Input.is_action_pressed("sneak"):
+    is_scoping = Input.is_action_pressed("scope")
+    
+    if Input.is_action_pressed("sneak") or is_scoping:
         speed_factor = 0.5
         if not is_sneaking:
             is_sneaking = true
@@ -134,7 +137,7 @@ func horizontal_movement(delta):
             $HitBox.shape.size.y = 71
             $HitBox.position.y = -4.5
     
-    var horizontal_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+    var horizontal_input = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left")) * (0 if is_scoping else 1)
     if horizontal_input != 0:
         last_movement_direction = sign(horizontal_input)
         if abs(velocity.x) < max_speed * speed_factor:

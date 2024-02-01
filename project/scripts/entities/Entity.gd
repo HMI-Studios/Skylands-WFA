@@ -6,6 +6,8 @@ var pathfinder = preload("res://scripts/entities/Pathfinder.gd").new()
 @onready var entities = get_node('/root/Main/World/Level/Entities')
 @onready var player = get_node('/root/Main/Player')
 
+var head_height = 0
+
 @export var HP = 1
 @export var speed = 40
 @export var flying = false

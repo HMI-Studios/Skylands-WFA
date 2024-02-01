@@ -14,6 +14,7 @@ func _ready():
     gun_hand = rig.get_node('Gun Hand')
 
     HP = 10
+    head_height = 20 * scale.y
     rig.remove_child(gun_hand)
     rig.near_arm.get_node(rig.near_arm.remote_path).add_child(gun_hand)
     rig.near_hand.hide()
