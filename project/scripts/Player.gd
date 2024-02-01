@@ -106,6 +106,8 @@ func handle_gun():
         var shortest_distance = null
         for entity in entities.get_children():
             var diff = (entity.global_position - $Targeting.global_position) / scale
+            if is_scoping and sign(diff.x) != last_movement_direction:
+                continue
             $Targeting.target_position = diff
             $Targeting.force_raycast_update()
             if $Targeting.is_colliding():
