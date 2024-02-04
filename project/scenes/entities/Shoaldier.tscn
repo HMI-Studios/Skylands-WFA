@@ -431,4 +431,3 @@ unique_name_in_owner = true
 position = Vector2(1.42857, -28.5714)
 
 [node name="PathRay" type="RayCast2D" parent="."]
-unique_name_in_owner = true

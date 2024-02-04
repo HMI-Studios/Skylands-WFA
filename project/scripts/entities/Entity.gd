@@ -25,9 +25,9 @@ func die():
     
     
 func can_walk_towards(diff):
-    %PathRay.position = diff.normalized() * speed
-    %PathRay.force_raycast_update()
-    return %PathRay.is_colliding()
+    $PathRay.position = diff.normalized() * speed
+    $PathRay.force_raycast_update()
+    return $PathRay.is_colliding()
     
     
 func handle_movement(delta):

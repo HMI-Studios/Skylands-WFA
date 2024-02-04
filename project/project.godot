@@ -24,6 +24,7 @@ Global="*res://scripts/Global.gd"
 Background="*res://scenes/Background.tscn"
 Transition="*res://ui/Transition.tscn"
 MenuMusic="*res://ui/MenuMusic.tscn"
+CRTOverlay="*res://scenes/CRTOverlay.tscn"
 
 [display]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://bgf7ubc1l43at"]
+[gd_scene load_steps=28 format=3 uid="uid://bgf7ubc1l43at"]
 
 [ext_resource type="Script" path="res://scripts/levels/TileTest.gd" id="1_jgvly"]
 [ext_resource type="Texture2D" uid="uid://c0snlmb2r4unk" path="res://assets/tiles/atlas.png" id="1_lwex1"]
 [ext_resource type="PackedScene" uid="uid://c24tpnc7epxp0" path="res://scenes/entities/Shoaldier.tscn" id="2_b037t"]
 [ext_resource type="PackedScene" uid="uid://dlhxihxddfn66" path="res://scenes/objects/Door.tscn" id="3_shker"]
 [ext_resource type="TileSet" uid="uid://drpqti0ttfx70" path="res://scenes/levels/TileSet.tres" id="4_fnwm3"]
+[ext_resource type="PackedScene" uid="uid://do6j3wjdm87r4" path="res://scenes/entities/Squidlet.tscn" id="4_l7ui7"]
 [ext_resource type="PackedScene" uid="uid://dqpasac6nkwwr" path="res://scenes/Elevator.tscn" id="5_65vrd"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3385q"]
@@ -186,10 +187,23 @@ position = Vector2(124, -111)
 position = Vector2(264, 47)
 
 [node name="Shoaldier3" parent="Entities" instance=ExtResource("2_b037t")]
+visible = false
 position = Vector2(-347, 47)
 
 [node name="Shoaldier4" parent="Entities" instance=ExtResource("2_b037t")]
 position = Vector2(43, -113)
+
+[node name="Squidlet1" parent="Entities" instance=ExtResource("4_l7ui7")]
+position = Vector2(-856, -49)
+
+[node name="Squidlet2" parent="Entities" instance=ExtResource("4_l7ui7")]
+position = Vector2(-745, -32)
+
+[node name="Squidlet3" parent="Entities" instance=ExtResource("4_l7ui7")]
+position = Vector2(-629, -7)
+
+[node name="Squidlet4" parent="Entities" instance=ExtResource("4_l7ui7")]
+position = Vector2(-504, -17)
 
 [node name="Hitboxes" type="TileMap" parent="."]
 light_mask = 2

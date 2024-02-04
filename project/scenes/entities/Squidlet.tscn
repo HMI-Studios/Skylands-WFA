@@ -1,0 +1,88 @@
+[gd_scene load_steps=19 format=3 uid="uid://do6j3wjdm87r4"]
+
+[ext_resource type="Script" path="res://scripts/entities/Squidlet.gd" id="1_6ro7j"]
+[ext_resource type="Texture2D" uid="uid://bolqtit5imup" path="res://assets/squidlet/squidlet3.png" id="1_suyoe"]
+[ext_resource type="Texture2D" uid="uid://wxfthx5ls3ny" path="res://assets/squidlet/squidlet4.png" id="2_vcfpj"]
+[ext_resource type="Texture2D" uid="uid://vh4hgc4s4f8b" path="res://assets/squidlet/squidlet5.png" id="3_y1waj"]
+[ext_resource type="Texture2D" uid="uid://c3mqegb4cmaum" path="res://assets/squidlet/squidlet6.png" id="4_gmj7i"]
+[ext_resource type="Texture2D" uid="uid://cjsku2ocx8c3c" path="res://assets/squidlet/squidlet7.png" id="5_vohje"]
+[ext_resource type="Texture2D" uid="uid://bwk1p3ras3tyr" path="res://assets/squidlet/squidlet8.png" id="6_lyl13"]
+[ext_resource type="Texture2D" uid="uid://cknxdxsm1q3ie" path="res://assets/squidlet/squidlet9.png" id="7_jnb0q"]
+[ext_resource type="Texture2D" uid="uid://drf45kn26446a" path="res://assets/squidlet/squidlet10.png" id="8_b58xa"]
+[ext_resource type="Texture2D" uid="uid://cgw2f6l5m2rj8" path="res://assets/squidlet/squidlet11.png" id="9_fd7sx"]
+[ext_resource type="Texture2D" uid="uid://dkd3jjqr88nyc" path="res://assets/squidlet/squidlet12.png" id="10_igrrw"]
+[ext_resource type="Texture2D" uid="uid://berpmxhu7omrv" path="res://assets/squidlet/squidlet13.png" id="11_mauso"]
+[ext_resource type="Texture2D" uid="uid://c3cmb3aihmmni" path="res://assets/squidlet/squidlet14.png" id="12_qofpy"]
+[ext_resource type="Texture2D" uid="uid://cc37thna3pf8p" path="res://assets/squidlet/squidlet15.png" id="13_h53fh"]
+[ext_resource type="Texture2D" uid="uid://dlwnjy0uu03be" path="res://assets/squidlet/squidlet16.png" id="14_b1hmo"]
+[ext_resource type="Texture2D" uid="uid://bm6kxkd6w73e6" path="res://assets/squidlet/squidlet17.png" id="15_1dkq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn47d"]
+size = Vector2(22, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70kxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_suyoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vcfpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y1waj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gmj7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vohje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lyl13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jnb0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b58xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fd7sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_igrrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mauso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qofpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h53fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b1hmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1dkq4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Squidlet" type="CharacterBody2D"]
+collision_layer = 410
+script = ExtResource("1_6ro7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_nn47d")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_70kxp")
+frame_progress = 0.324658
+
+[node name="PathRay" type="RayCast2D" parent="."]
