@@ -17,8 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dlwnjy0uu03be" path="res://assets/squidlet/squidlet16.png" id="14_b1hmo"]
 [ext_resource type="Texture2D" uid="uid://bm6kxkd6w73e6" path="res://assets/squidlet/squidlet17.png" id="15_1dkq4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn47d"]
-size = Vector2(22, 41)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjlhs"]
+radius = 11.0
+height = 32.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_70kxp"]
 animations = [{
@@ -75,11 +76,12 @@ animations = [{
 
 [node name="Squidlet" type="CharacterBody2D"]
 collision_layer = 410
+collision_mask = 129
 script = ExtResource("1_6ro7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
-shape = SubResource("RectangleShape2D_nn47d")
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_pjlhs")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_70kxp")

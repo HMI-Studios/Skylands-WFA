@@ -187,7 +187,6 @@ position = Vector2(124, -111)
 position = Vector2(264, 47)
 
 [node name="Shoaldier3" parent="Entities" instance=ExtResource("2_b037t")]
-visible = false
 position = Vector2(-347, 47)
 
 [node name="Shoaldier4" parent="Entities" instance=ExtResource("2_b037t")]

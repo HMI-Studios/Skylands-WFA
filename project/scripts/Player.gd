@@ -114,11 +114,16 @@ func handle_gun():
                 continue
             if shortest_distance == null or diff.length() < shortest_distance:
                 shortest_distance = diff.length()
+                #if aim_target != null and is_instance_valid(aim_target):
+                    #aim_target.is_aimed_at = false
                 aim_target = entity
+                #aim_target.is_aimed_at = true
     elif auto_aim and is_auto_aiming:
         last_movement_direction = 1 if facing_right else -1
     elif (not auto_aim) and is_auto_aiming:
         is_auto_aiming = false
+        #if is_instance_valid(aim_target):
+            #aim_target.is_aimed_at = false
         aim_target = null
 
     
