@@ -2,11 +2,12 @@ extends "Entity.gd"
 
 
 var evade_target = null
+var attack_cooldown = 1
+var BASE_SPEED = randf_range(20, 30)
 
 
 func _ready():
-    speed = randf_range(20, 30)
-    print(speed)
+    speed = BASE_SPEED
     $Sprite.play("default")
     
     
@@ -21,6 +22,9 @@ func distance_to_ground():
 func _physics_process(delta):
     # Does NOT use super._physics_process, it handles its own movement.
     
+    if attack_cooldown > 0:
+        attack_cooldown = max(attack_cooldown - delta, 0)
+    
     var altitude = distance_to_ground()
     if (altitude - (velocity.y * delta)) < 100:
         if not is_on_ceiling():
@@ -29,14 +33,22 @@ func _physics_process(delta):
         if not is_on_floor():
             velocity += Global.gravity * delta
             
-    if player.aim_angle != null:
-        var diff = (global_position - player.global_position).rotated(randf_range(-0.1, 0.1))
-        
-        var is_aimed_at = abs(player.aim_angle - diff.angle()) < 0.1745
+    var diff = (global_position - player.global_position).rotated(randf_range(-0.1, 0.1))
+    var is_aimed_at = player.aim_angle != null and abs(player.aim_angle - diff.angle()) < 0.1745
+    if is_aimed_at or attack_cooldown > 0:
         if is_aimed_at:
-            if diff.length() < 300:
-                velocity.x += speed * sign(diff.x)
-                velocity.y += speed * sign(diff.y)
+            attack_cooldown = max(attack_cooldown, 1)
+            speed = BASE_SPEED * 1.5
+        if diff.length() < (300 if is_aimed_at else 100):
+            velocity.x += speed * sign(diff.x)
+            velocity.y += (speed * sign(diff.y)) - (speed * 0.2)
+    elif diff.length() > 10:
+        speed = BASE_SPEED
+        velocity.x -= speed * sign(diff.x)
+        velocity.y -= speed * sign(diff.y)
+    elif attack_cooldown == 0 and diff.length() < 10:
+        attack_cooldown = 3
+        player.hurt(2)
                 
     velocity *= 0.9
         
